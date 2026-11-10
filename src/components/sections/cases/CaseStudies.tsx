@@ -465,109 +465,11 @@ export function CaseSupplier() {
   );
 }
 
-
-/* ---------------------------------------------------------------------------
-   05  IntelliQuery: AI engineering concept (not yet implemented)
-   ------------------------------------------------------------------------- */
-export function CaseIntelliQuery() {
-  const p = projectBySlug["intelliquery"];
-  const stages = [
-    { title: "Document ingestion", text: "A future upload flow would extract text from PDF files and preserve page-level metadata.", icon: Database },
-    { title: "Embeddings and indexing", text: "An embedding model would convert text passages into vectors for semantic retrieval.", icon: Brain },
-    { title: "Context retrieval", text: "A retriever would select relevant passages and provide them to the language model as grounded context.", icon: Target },
-    { title: "Answer with sources", text: "The interface would display generated answers with references to the retrieved document passages.", icon: GraduationCap },
-  ];
-
-  return (
-    <article id="case-intelliquery" aria-labelledby="case-intelliquery-title" data-header-theme="light" className="relative bg-white">
-      <div className="shell section-pad">
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-7">
-            <p className="type-label flex items-center gap-3 text-muted" data-reveal>
-              <span className="num text-navy">{p.index}</span>
-              <span aria-hidden className="h-px w-8 bg-line" />
-              Project concept · In development
-            </p>
-            <h1 id="case-intelliquery-title" data-section-heading className="type-title balance mt-5 text-ink" data-reveal style={{ ["--d" as string]: "80ms" }}>
-              {p.title}
-            </h1>
-            <p className="type-lead pretty mt-5 max-w-[42rem] text-ink-2" data-reveal style={{ ["--d" as string]: "160ms" }}>
-              {p.oneLiner}
-            </p>
-          </div>
-          <aside className="grid content-start gap-6 lg:col-span-4 lg:col-start-9 lg:pt-12" aria-label="Proposed technology stack">
-            <div data-reveal style={{ ["--d" as string]: "200ms" }}>
-              <p className="mb-3 text-[0.8rem] font-semibold uppercase tracking-[0.14em] text-muted">Proposed technology stack</p>
-              <ToolTags tools={p.tools} label="Proposed technologies" />
-            </div>
-            <div data-reveal style={{ ["--d" as string]: "260ms" }}>
-              <p className="mb-3 text-[0.8rem] font-semibold uppercase tracking-[0.14em] text-muted">Planned capabilities</p>
-              <p className="text-[0.95rem] leading-relaxed text-ink-2">{p.capabilities.join(", ")}.</p>
-            </div>
-          </aside>
-        </div>
-
-        <div className="mt-16 grid gap-12 border-t border-line pt-12 lg:grid-cols-12 lg:gap-8">
-          <div className="grid content-start gap-10 lg:col-span-5">
-            <BriefBlock title="The problem">{p.challenge}</BriefBlock>
-            <BriefBlock title="The objective" delay={80}>{p.objective}</BriefBlock>
-          </div>
-          <div className="lg:col-span-6 lg:col-start-7">
-            <h2 className="text-[0.8rem] font-semibold uppercase tracking-[0.14em] text-muted" data-reveal>
-              Proposed architecture
-            </h2>
-            <ol className="mt-4 grid gap-5">
-              {stages.map((stage, i) => {
-                const Icon = stage.icon;
-                return (
-                  <li key={stage.title} className="grid grid-cols-[2.25rem_1fr] gap-4" data-reveal style={{ ["--d" as string]: `${120 + i * 80}ms` }}>
-                    <span className="grid size-9 place-items-center rounded-full border border-line text-navy">
-                      <Icon size={17} weight="light" aria-hidden />
-                    </span>
-                    <div>
-                      <p className="text-[1.02rem] font-semibold text-ink">{stage.title}</p>
-                      <p className="mt-1 text-[0.95rem] leading-relaxed text-ink-2">{stage.text}</p>
-                    </div>
-                  </li>
-                );
-              })}
-            </ol>
-          </div>
-        </div>
-
-        <div className="mt-16 rounded-[16px] border border-[#eadfbd] bg-[#fffaf0] p-6" data-reveal="rise">
-          <p className="text-[0.8rem] font-semibold uppercase tracking-[0.14em] text-[#8a5a00]">Current status</p>
-          <p className="mt-2 text-[1.05rem] font-semibold text-ink">Concept documented · Application not yet built</p>
-          <p className="mt-2 max-w-[52rem] text-[0.92rem] leading-relaxed text-ink-2">
-            This page describes a proposed architecture and development direction. There is currently no working application, live demo, measured performance result or completed implementation to claim.
-          </p>
-        </div>
-
-        <div className="mt-16">
-          <h2 className="text-[1.25rem] font-semibold tracking-[-0.02em] text-ink" data-reveal>Planned development stages</h2>
-          <ul className="mt-5 grid gap-px overflow-hidden rounded-[16px] border border-line bg-line sm:grid-cols-2">
-            {p.approach.map((step, i) => (
-              <li key={step.title} className="bg-white p-5" data-reveal style={{ ["--d" as string]: `${i * 70}ms` }}>
-                <span className="num text-[0.8rem] font-semibold text-blue">Stage {i + 1}</span>
-                <p className="mt-2 text-[1rem] font-semibold text-ink">{step.title}</p>
-                <p className="mt-1.5 text-[0.9rem] leading-relaxed text-ink-2">{step.text}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <CaseNav prev={{ href: "/projects/supplier-risk", label: projectBySlug["supplier-risk"].shortTitle }} />
-      </div>
-    </article>
-  );
-}
-
 /** Case study page bodies, keyed by project slug. */
 export const caseStudyBySlug = {
   "control-tower": CaseControlTower,
   novexai: CaseNovex,
   "inventory-optimization": CaseInventory,
   "supplier-risk": CaseSupplier,
-  intelliquery: CaseIntelliQuery,
 } as const;
 

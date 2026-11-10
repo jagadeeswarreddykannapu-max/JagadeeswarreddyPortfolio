@@ -9,7 +9,7 @@
 
 export type ResultKind = "delivered" | "model" | "simulated" | "modelled";
 
-export type ProjectCategory = "supply-chain" | "analytics" | "automation" | "forecasting" | "ai-engineering";
+export type ProjectCategory = "supply-chain" | "analytics" | "automation" | "forecasting";
 
 export const projectCategories: { id: ProjectCategory | "all"; label: string }[] = [
   { id: "all", label: "All projects" },
@@ -17,7 +17,6 @@ export const projectCategories: { id: ProjectCategory | "all"; label: string }[]
   { id: "analytics", label: "Data analytics" },
   { id: "automation", label: "Automation" },
   { id: "forecasting", label: "Forecasting" },
-  { id: "ai-engineering", label: "AI engineering" },
 ];
 
 export type ProjectResult = {
@@ -238,47 +237,6 @@ export const projects: Project[] = [
       "A Power BI report that consolidates delivery reliability, invoice exceptions, spend exposure and supplier risk into one decision-support view.",
     cardTags: ["Power BI", "Supplier scorecards", "Spend analysis"],
     categories: ["supply-chain", "analytics"],
-  },
-  {
-    slug: "intelliquery",
-    index: "05",
-    title: "IntelliQuery: AI Research & Knowledge Assistant",
-    shortTitle: "IntelliQuery",
-    oneLiner:
-      "A proposed document-grounded AI assistant that lets users explore PDF knowledge through natural-language questions and source-aware answers.",
-    tools: ["Python", "LLM API", "RAG", "Hugging Face", "ChromaDB", "Streamlit"],
-    tags: ["AI engineering", "RAG", "LLM applications"],
-    challenge:
-      "Long research papers and business documents can be difficult to search efficiently. Keyword search may miss relevant passages when a question uses different wording from the source.",
-    objective:
-      "Explore a retrieval-augmented workflow that retrieves relevant passages from uploaded documents and uses a language model to draft answers grounded in those passages.",
-    approach: [
-      {
-        title: "Ingest and prepare documents",
-        text: "Planned workflow: accept PDF files, extract their text, split the content into manageable passages and retain document metadata for traceability.",
-      },
-      {
-        title: "Create semantic representations",
-        text: "Planned workflow: use an embedding model to represent document passages and store those vectors in a searchable vector database such as ChromaDB.",
-      },
-      {
-        title: "Retrieve relevant context",
-        text: "When a question is submitted, retrieve the most relevant passages and provide that context to the language model as part of a RAG prompt.",
-      },
-      {
-        title: "Generate grounded responses",
-        text: "Present a concise answer alongside the retrieved source passages. A future implementation should also evaluate retrieval quality, answer faithfulness and failure cases.",
-      },
-    ],
-    capabilities: ["RAG architecture", "Semantic retrieval", "LLM application design", "Source-grounded question answering"],
-    results: [],
-    relevance:
-      "This concept broadens the portfolio beyond supply chain analytics and sets out a practical direction for developing skills in modern AI application engineering.",
-    thumbnail: { src: "/images/projects/thumb-intelliquery.svg", width: 640, height: 520 },
-    cardSummary:
-      "AI application concept exploring PDF ingestion, semantic retrieval and source-grounded answers with Retrieval-Augmented Generation. Not yet implemented.",
-    cardTags: ["Concept", "RAG", "LLMs", "Python"],
-    categories: ["ai-engineering", "analytics"],
   },
 ];
 
