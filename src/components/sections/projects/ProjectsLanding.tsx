@@ -126,7 +126,7 @@ export function ProjectsLanding() {
                 Case studies
               </p>
               <h2 id="case-studies-title" data-section-heading className="type-title mt-3" data-reveal style={v({ "--d": "80ms" })}>
-                Four projects, one page each.
+                Five projects, one page each.
               </h2>
             </div>
             <div data-reveal="fade" style={v({ "--d": "160ms" })}>
