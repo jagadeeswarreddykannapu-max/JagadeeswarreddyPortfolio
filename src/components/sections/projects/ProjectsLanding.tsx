@@ -72,9 +72,9 @@ export function ProjectsLanding() {
               Real-world solutions through data &amp; automation
             </p>
             <p className="type-body pretty dm-3 mt-4 text-[0.95rem] text-white/80" data-reveal style={v({ "--d": "2000ms" })}>
-              A collection of projects applying data analytics, forecasting and process automation to operational and
-              supply chain problems. Each case study has its own page, with the approach, the tools, a working
-              demonstration and clearly labelled results.
+              A collection of projects applying data analytics, forecasting, process automation and AI engineering to
+              operational and technical problems. Completed work and concepts in development are clearly distinguished
+              on their own project pages.
             </p>
           </div>
 
@@ -126,7 +126,7 @@ export function ProjectsLanding() {
                 Case studies
               </p>
               <h2 id="case-studies-title" data-section-heading className="type-title mt-3" data-reveal style={v({ "--d": "80ms" })}>
-                Four projects, one page each.
+                Five projects, one page each.
               </h2>
             </div>
             <div data-reveal="fade" style={v({ "--d": "160ms" })}>
